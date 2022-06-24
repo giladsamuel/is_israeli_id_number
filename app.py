@@ -1,9 +1,9 @@
 # This program checks if a given israeli ID is valid number using the "check digit" system
 # 
 # @author: Gilad Samuel
-# @version: 1.1.0
+# @version: 1.1.1
 
-def sum_digits(n):                                      # return the sum of digits of a number
+def sum_digits(n):                                      # return number's sum of digits
     s = 0
     while n:
         s += n % 10
@@ -32,7 +32,7 @@ else:
     for x in range(9):                                    # multiply ID digits with check_list digits
         temp = check_list[x] * id_list[x] 
         
-        if temp <=9:                                      # if result of a multiply greater then 9, sum of digits insted
+        if temp <=9:                                      # if result of a multiply greater then 9, sum digits instead
             check_list[x] = temp                          
         else:
              check_list[x] = sum_digits(temp)             
